@@ -1,0 +1,40 @@
+<html>
+<body>
+    <div class="login">
+       <h1>FWI Prediction</h1>
+   
+        <!-- Main Input For Receiving Query to our ML -->
+       <form action="{{ url_for('predict')}}" method="post">
+            <label for="Temperature">Temperature:</label>
+            <input type="text" id="Temperature" name="Temperature" required="required"><br><br>
+            <label for="RH">RH:</label>
+            <input type="text" id="RH" name="RH" required="required"><br><br>            
+            <label for="Ws">Ws:</label>
+            <input type="text" id="Ws" name="Ws" required="required"><br><br>        
+            <label for="Rain">Rain:</label>
+            <input type="text" id="Rain" name="Rain" required="required"><br><br>
+            <label for="FFMC">FFMC:</label>
+            <input type="text" id="FFMC" name="FFMC" required="required"><br><br>
+            <label for="DMC">DMC:</label>
+            <input type="text" id="DMC" name="DMC" required="DMC"><br><br>
+            <label for="ISI">ISI:</label>
+            <input type="text" id="ISI" name="ISI" required="required"><br><br>
+            <label for="Classes">Class:</label>
+            <select id="Classes" name="Classes">
+                <option value="0">Not Fire</option>
+                <option value="1">Fire</option>
+            </select><br><br>
+            <label for="Region">Region:</label>
+            <select id="Region" name="Region">
+                <option value="0">Bejaia Region</option>
+                <option value="1">Sidi-Bel Abbes Region</option>
+            </select><br><br>
+   
+   
+           <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+       </form>
+    <h2>
+       THE FWI prediction is {{result}}
+    </h2>
+   <body>
+</html>
